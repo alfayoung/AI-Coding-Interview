@@ -1,0 +1,13 @@
+[project]
+name = "coding-interview"
+version = "0.1.0"
+description = "Mock interview coding problems — PyTorch algorithm implementations"
+requires-python = ">=3.12"
+dependencies = [
+    "torch",
+    "pytest",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["problems"]
+python_files = ["test_*.py", "test.py"]

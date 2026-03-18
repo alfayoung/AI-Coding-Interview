@@ -1,0 +1,5 @@
+- [ ] cross-attention
+- [ ] self-attention
+- [ ] transformer block
+- [ ] DDPM
+- [ ] Flow Matching
