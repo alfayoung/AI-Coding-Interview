@@ -8,6 +8,8 @@ dependencies = [
     "pytest",
     "jupyter",
     "numpy",
+    "matplotlib>=3.10.8",
+    "scikit-learn>=1.8.0",
 ]
 
 [tool.pytest.ini_options]
