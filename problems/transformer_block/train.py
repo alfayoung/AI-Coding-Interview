@@ -47,8 +47,8 @@ def evaluate(model, data_loader):
 def main():
     dataset = CustomDataset([{'x': torch.randn(10, 8), 'y': torch.randn(10, 8)} for _ in range(20)])
     model = TransformerBlock(8, 2, 4, 8 * 4)
-    dataset = dataset.to('cuda')
-    model = model.to('cuda')
+    dataset = dataset.to('cpu')
+    model = model.to('cpu')
     data_loader = DataLoader(dataset, batch_size=4, shuffle=True)
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
     training_loop(model, data_loader, optimizer, 5)

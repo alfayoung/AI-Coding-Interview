@@ -12,11 +12,13 @@ Args:
 Returns:
     output: (batch, seq_len, d_model)
 """
+from typing import Optional
+
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from typing import Optional
+
 
 class TransformerBlock(nn.Module):
     def __init__(self, d_model: int, num_heads: int, d_head: int, d_ff: int):
@@ -54,9 +56,10 @@ class TransformerBlock(nn.Module):
         
         # SDPA
         # [B, num_head, L, L]
-        score = F.softmax(torch.matmul(q, k.transpose(-1, -2)) / np.sqrt(self.d_head), dim=-1)
+        score = torch.matmul(q, k.transpose(-1, -2)) / np.sqrt(self.d_head)
         if mask is not None:
-            score += torch.where(mask == 0, -torch.inf, 0.0)
+            score = score.masked_fill(mask.unsqueeze(1) == 0, float('-inf'))
+        score = F.softmax(score, dim=-1)
         
         res = torch.matmul(score, v) # [B, num_head, L, d_head]
         # [B, num_head, L, d_head] -> [B, L, num_head, d_head] -> [B, L, d_model]
