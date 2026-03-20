@@ -1,5 +1,9 @@
-- [ ] cross-attention
-- [ ] self-attention
-- [ ] transformer block
-- [ ] DDPM
-- [ ] Flow Matching
+- [x] cross-attention
+- [x] self-attention
+- [x] transformer block
+- [ ] RoPE
+- [ ] Gradient Descent of Linear Regression
+- [ ] LayerNorm
+- [ ] BatchNorm
+- [x] DDPM
+- [x] Flow Matching

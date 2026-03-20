@@ -4,8 +4,10 @@ version = "0.1.0"
 description = "Mock interview coding problems — PyTorch algorithm implementations"
 requires-python = ">=3.12"
 dependencies = [
-    "torch",
+    "torch>=2.10.0",
     "pytest",
+    "jupyter",
+    "numpy",
 ]
 
 [tool.pytest.ini_options]
