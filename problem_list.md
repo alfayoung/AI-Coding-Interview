@@ -1,9 +1,21 @@
+# Attention
 - [x] cross-attention
-- [x] self-attention
+- [x] (Causal) self-attention
 - [x] transformer block
-- [ ] RoPE
+- [ ] flash-attention
+  - [ ] (Online) Softmax
+
+# Math
 - [ ] Gradient Descent of Linear Regression
+- [ ] Gradient of Softmax
 - [ ] LayerNorm
 - [ ] BatchNorm
-- [x] DDPM
-- [x] Flow Matching
+
+# Diffusion Models
+- [] DDPM
+- [] Flow Matching
+
+# Reinforcement Learning
+- [ ] PPO
+- [ ] SAC
+- [ ] TD3

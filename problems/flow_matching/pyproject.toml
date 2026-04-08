@@ -1,0 +1,10 @@
+[project]
+name = "flow-matching"
+version = "0.1.0"
+description = "Implement Flow Matching for generative modeling"
+requires-python = ">=3.12"
+dependencies = [
+    "torch>=2.10.0",
+    "matplotlib>=3.10.8",
+    "scikit-learn>=1.8.0",
+]
